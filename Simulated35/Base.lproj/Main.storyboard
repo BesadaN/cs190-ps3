@@ -25,7 +25,12 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zO6-ZG-QjY">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="68"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="pvM-l1-XKQ" kind="presentation" identifier="LogoPage" id="V5b-SM-X98"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.10196078431372549" green="0.050980392156862744" blue="0.050980392156862744" alpha="1" colorSpace="calibratedRGB"/>
@@ -463,6 +468,7 @@
                             <constraint firstItem="zUv-yp-eQ2" firstAttribute="bottom" secondItem="pDh-nJ-OyZ" secondAttribute="bottom" id="zQi-2U-ON7"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="5l9-Z5-BfX"/>
                     <connections>
                         <outlet property="displayView" destination="ey4-3Y-bB7" id="3cv-om-SQm"/>
                     </connections>
@@ -471,10 +477,10 @@
             </objects>
             <point key="canvasLocation" x="635" y="676"/>
         </scene>
-        <!--View Controller-->
+        <!--Gaels View Controller-->
         <scene sceneID="fqI-Zu-xJx">
             <objects>
-                <viewController id="pvM-l1-XKQ" sceneMemberID="viewController">
+                <viewController id="pvM-l1-XKQ" customClass="GaelsViewController" customModule="Simulated35" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PMh-C8-w4L"/>
                         <viewControllerLayoutGuide type="bottom" id="IP8-8b-jai"/>
@@ -482,12 +488,38 @@
                     <view key="view" contentMode="scaleToFill" id="ay0-uh-4ul">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gaels_logo_944_625" translatesAutoresizingMaskIntoConstraints="NO" id="nR0-I8-XdZ">
+                                <rect key="frame" x="20" y="20" width="560" height="200"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spI-SK-Zft">
+                                <rect key="frame" x="279" y="507" width="42" height="30"/>
+                                <state key="normal" title="DONE">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="eK3-5Y-Yfy" kind="unwind" unwindAction="unwindAcknowledgements:" id="phh-T3-xMy"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nR0-I8-XdZ" firstAttribute="leading" secondItem="ay0-uh-4ul" secondAttribute="leadingMargin" id="8pl-YO-43v"/>
+                            <constraint firstItem="nR0-I8-XdZ" firstAttribute="centerX" secondItem="spI-SK-Zft" secondAttribute="centerX" id="EDV-KX-KpO"/>
+                            <constraint firstItem="nR0-I8-XdZ" firstAttribute="top" secondItem="PMh-C8-w4L" secondAttribute="bottom" id="aMi-u2-OPs"/>
+                            <constraint firstItem="nR0-I8-XdZ" firstAttribute="height" secondItem="ay0-uh-4ul" secondAttribute="height" multiplier="0.3333" id="kxZ-2O-GHv"/>
+                            <constraint firstItem="IP8-8b-jai" firstAttribute="top" secondItem="spI-SK-Zft" secondAttribute="bottom" constant="63" id="sFx-GJ-Jg0"/>
+                            <constraint firstItem="nR0-I8-XdZ" firstAttribute="trailing" secondItem="ay0-uh-4ul" secondAttribute="trailingMargin" id="yFk-JD-3ce"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YkF-zc-RJk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="eK3-5Y-Yfy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="638" y="1349"/>
+            <point key="canvasLocation" x="635" y="1501"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gaels_logo_944_625" width="472" height="312"/>
+    </resources>
 </document>
